@@ -10,12 +10,12 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const pool = mysql.createPool({
-    user: "root",
-    password: "root", // eventuellt "" ?
-    host: "localhost",
-    database: "banksajt",
-    port: 3306,
-})
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    host: process.env.DB_HOST,
+    database: process.env.DB_NAME,
+    port: Number(process.env.DB_PORT),
+});
 
 async function query(sql, params) {
     const [results] = await pool.execute(sql, params);
