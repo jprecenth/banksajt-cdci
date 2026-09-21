@@ -35,7 +35,7 @@ export default function Home() {
         const inputAmount = Object.fromEntries(formData);
         const data = localStorage.getItem("sessionToken")
 
-        const response = await fetch("http://localhost:3001/me/accounts/transactions", {
+        const response = await fetch("http://13.48.194.153:3001/me/accounts/transactions", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
