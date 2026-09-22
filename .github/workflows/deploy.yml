@@ -9,7 +9,7 @@ on:
             -main
 
 jobs:
-    ci:
+    frontend_ci:
         runs-on: ubuntu-latest
 
         steps:
@@ -34,4 +34,16 @@ jobs:
             - name: Build frontend
               working-directory: ./frontend
               run: npm run build
+
+    backend_ci:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Install backend dependencies
+              working-directory: ./backend
+              run: npm ci
+    
     

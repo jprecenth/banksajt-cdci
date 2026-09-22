@@ -20,7 +20,7 @@ export default function Home() {
         })
         const result = await response.json();
 
-        if (response.ok errortext) {
+        if (response.ok) {
             localStorage.setItem("sessionToken", result.token);
             console.log("Signed in successfully!");
             router.push("/account")
